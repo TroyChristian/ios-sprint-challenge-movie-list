@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol addMovieDelegate{
+    func movieWasCreated(movie:Movie)
+}
 
 class AddMovieViewController: UIViewController {
     @IBOutlet weak var newMovieTextField: UITextField!
