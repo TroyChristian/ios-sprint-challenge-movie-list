@@ -16,4 +16,9 @@ class MovieTableViewCell: UITableViewCell {
     @IBAction func onButtonTapped(_ sender: Any) {
     }
     
+    
+    func setMovieTitle(movie:Movie){
+        movieName.text = movie.name
+    }
+    
 }
