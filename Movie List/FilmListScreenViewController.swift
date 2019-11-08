@@ -10,7 +10,8 @@ import UIKit
 
 class FilmListScreenViewController: UIViewController, addMovieDelegate {
     @IBOutlet weak var tableView: UITableView!
-    var movies: [Movie] = []
+    
+    var movies: [Movie] = [Movie(name:"Placeholder")]
     func movieWasCreated(movie:Movie){
         movies.append(movie)
         tableView.reloadData() 

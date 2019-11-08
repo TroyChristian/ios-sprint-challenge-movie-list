@@ -16,6 +16,7 @@ class AddMovieViewController: UIViewController {
     @IBAction func AddMovieButtonTapped(_ sender: Any) {
         if let name = newMovieTextField.text, !name.isEmpty {
             var movie = Movie(name:name)
+            
             delegate?.movieWasCreated(movie:movie)
             self.dismiss(animated: true, completion: nil)
             
