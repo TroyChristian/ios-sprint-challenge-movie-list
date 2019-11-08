@@ -8,13 +8,22 @@
 
 import UIKit
 
-class FilmListScreenViewController: UIViewController {
+class FilmListScreenViewController: UIViewController, addMovieDelegate {
+    @IBOutlet weak var tableView: UITableView!
     var movies: [Movie] = []
-    
+    func movieWasCreated(movie:Movie){
+        movies.append(movie)
+        tableView.reloadData() 
+         
+        
+    }
   
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self 
 
         
         
@@ -23,7 +32,7 @@ class FilmListScreenViewController: UIViewController {
 }
 }
 
-extension FilmListScreenViewController: UITableViewDataSource, UITableViewDelegate,  addMovieDelegate {
+extension FilmListScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
@@ -34,12 +43,9 @@ extension FilmListScreenViewController: UITableViewDataSource, UITableViewDelega
         let movie = movies[indexPath.row]
         let film = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieTableViewCell
         film.setMovieTitle(movie:movie)
-        return film 
+        
+        return film
     }
     
-    func movieWasCreated(movie: Movie) {
-            movies.append(movie)
-            //tableView.reloadData()
-            dismiss(animated: true, completion: nil)
-        }
+    
 }

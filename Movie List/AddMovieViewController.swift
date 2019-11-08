@@ -17,6 +17,8 @@ class AddMovieViewController: UIViewController {
         if let name = newMovieTextField.text, !name.isEmpty {
             var movie = Movie(name:name)
             delegate?.movieWasCreated(movie:movie)
+            self.dismiss(animated: true, completion: nil)
+            
         }
     }
     
@@ -24,7 +26,7 @@ class AddMovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newMovieTextField.delegate = self 
+        newMovieTextField.delegate = self
        
 
         // Do any additional setup after loading the view.

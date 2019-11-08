@@ -77,6 +77,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="uzR-7L-rYE" id="wac-oj-Dcz"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
