@@ -13,9 +13,19 @@ protocol addMovieDelegate{
 
 class AddMovieViewController: UIViewController {
     @IBOutlet weak var newMovieTextField: UITextField!
+    @IBAction func AddMovieButtonTapped(_ sender: Any) {
+        if let name = newMovieTextField.text, !name.isEmpty {
+            var movie = Movie(name:name)
+            delegate?.movieWasCreated(movie:movie)
+        }
+    }
+    
+   var delegate: addMovieDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newMovieTextField.delegate = self 
+       
 
         // Do any additional setup after loading the view.
     }
@@ -31,4 +41,14 @@ class AddMovieViewController: UIViewController {
     }
     */
 
+}
+extension AddMovieViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // This drops the keyboard
+        textField.resignFirstResponder()
+        
+        return true
+    }
 }

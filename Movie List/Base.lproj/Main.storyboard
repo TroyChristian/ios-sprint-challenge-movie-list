@@ -95,17 +95,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="914-Ly-SGJ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="914-Ly-SGJ">
                                 <rect key="frame" x="73" y="139" width="229" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATF-zY-EVX">
+                                <rect key="frame" x="151" y="220" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Movie"/>
+                                <connections>
+                                    <action selector="AddMovieButtonTapped:" destination="cO3-cd-bKJ" eventType="touchUpInside" id="rhN-ui-8sB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="914-Ly-SGJ" firstAttribute="leading" secondItem="fPZ-X5-oFA" secondAttribute="leading" constant="73" id="4h7-eI-2rA"/>
+                            <constraint firstItem="914-Ly-SGJ" firstAttribute="top" secondItem="wvK-HL-KnC" secondAttribute="bottom" constant="98" id="AAk-7e-txj"/>
+                            <constraint firstItem="fPZ-X5-oFA" firstAttribute="trailing" secondItem="914-Ly-SGJ" secondAttribute="trailing" constant="73" id="Aen-sS-Uz4"/>
                             <constraint firstItem="fPZ-X5-oFA" firstAttribute="trailing" secondItem="wvK-HL-KnC" secondAttribute="trailing" constant="73" id="AjS-cy-kea"/>
                             <constraint firstItem="fPZ-X5-oFA" firstAttribute="bottom" secondItem="wvK-HL-KnC" secondAttribute="bottom" constant="606" id="RUS-5L-e4C"/>
+                            <constraint firstItem="fPZ-X5-oFA" firstAttribute="bottom" secondItem="914-Ly-SGJ" secondAttribute="bottom" constant="474" id="S7P-vt-paW"/>
                             <constraint firstItem="wvK-HL-KnC" firstAttribute="leading" secondItem="fPZ-X5-oFA" secondAttribute="leading" constant="73" id="cS4-vJ-vv7"/>
                             <constraint firstItem="wvK-HL-KnC" firstAttribute="top" secondItem="fPZ-X5-oFA" secondAttribute="top" constant="20" id="yhc-Ah-ScR"/>
                         </constraints>
