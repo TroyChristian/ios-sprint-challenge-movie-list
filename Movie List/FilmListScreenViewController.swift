@@ -8,11 +8,13 @@
 
 import UIKit
 
-class FilmListScreenViewController: UIViewController, addMovieDelegate {
+class FilmListScreenViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+   
     
     var movies: [Movie] = [Movie(name:"Placeholder")]
     func movieWasCreated(movie:Movie){
+        print(\(movie))
         movies.append(movie)
         tableView.reloadData() 
          
@@ -30,10 +32,10 @@ class FilmListScreenViewController: UIViewController, addMovieDelegate {
         
         
 
-}
-}
+    } }
 
-extension FilmListScreenViewController: UITableViewDataSource, UITableViewDelegate {
+
+extension FilmListScreenViewController: UITableViewDataSource, UITableViewDelegate, addMovieDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
@@ -42,11 +44,23 @@ extension FilmListScreenViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let movie = movies[indexPath.row]
-        let film = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieTableViewCell
-        film.setMovieTitle(movie:movie)
+        let film = self.tableView.dequeueReusableCell(withIdentifier: "MovieCell") as?
+             MovieTableViewCell
+        film?.movie = lastPassedMovie
         
-        return film
+        return film!
+        
+        
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          
+          if segue.identifier == "AddMovieSegue" {
+              if let addMovieVC = segue.destination as? AddMovieViewController {
+                  // Hey, I'm (the table view controller) going to be the person you tell when a new friend is created
+                  addMovieVC.delegate = self
+              }
+      
 }
+    }}
+
