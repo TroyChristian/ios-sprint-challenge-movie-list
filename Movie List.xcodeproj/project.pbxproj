@@ -16,6 +16,7 @@
 		FB71713A2375D7080086E5A0 /* FilmListScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7171392375D7080086E5A0 /* FilmListScreenViewController.swift */; };
 		FB71713C2375DB3E0086E5A0 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71713B2375DB3E0086E5A0 /* MovieTableViewCell.swift */; };
 		FB71713E2375E7740086E5A0 /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71713D2375E7740086E5A0 /* AddMovieViewController.swift */; };
+		FB717140237649F30086E5A0 /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71713F237649F30086E5A0 /* MovieController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FB7171392375D7080086E5A0 /* FilmListScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmListScreenViewController.swift; sourceTree = "<group>"; };
 		FB71713B2375DB3E0086E5A0 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		FB71713D2375E7740086E5A0 /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
+		FB71713F237649F30086E5A0 /* MovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				FB71713D2375E7740086E5A0 /* AddMovieViewController.swift */,
 				FB71713B2375DB3E0086E5A0 /* MovieTableViewCell.swift */,
 				FB7171392375D7080086E5A0 /* FilmListScreenViewController.swift */,
+				FB71713F237649F30086E5A0 /* MovieController.swift */,
 				8E5B3915218CDD4D00AB9C2B /* LambdaLogoAssets.xcassets */,
 				8E5B3914218CDD4D00AB9C2B /* LaunchScreen.storyboard */,
 			);
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB717140237649F30086E5A0 /* MovieController.swift in Sources */,
 				FB71713A2375D7080086E5A0 /* FilmListScreenViewController.swift in Sources */,
 				FB7171362375CCEB0086E5A0 /* Movie.swift in Sources */,
 				FB71713C2375DB3E0086E5A0 /* MovieTableViewCell.swift in Sources */,

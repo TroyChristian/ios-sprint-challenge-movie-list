@@ -13,12 +13,12 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieName: UILabel!
     
     @IBOutlet weak var buttonLabel: UIButton!
-    //@IBAction func onButtonTapped(_ sender: Any)
+    @IBAction func onButtonTapped(_ sender: Any)
     var movie:Movie? {
             didSet {
                 updateViews()
             }
-        }
+    }}
         
    
     

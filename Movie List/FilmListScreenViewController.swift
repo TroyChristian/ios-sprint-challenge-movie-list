@@ -11,15 +11,10 @@ import UIKit
 class FilmListScreenViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
    
+
     
-    var movies: [Movie] = [Movie(name:"Placeholder")]
-    func movieWasCreated(movie:Movie){
-        print(\(movie))
-        movies.append(movie)
-        tableView.reloadData() 
-         
-        
-    }
+    
+   
   
 
     override func viewDidLoad() {
@@ -32,23 +27,40 @@ class FilmListScreenViewController: UIViewController {
         
         
 
-    } }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    let movieController = MovieController()
+    
+}
 
 
 extension FilmListScreenViewController: UITableViewDataSource, UITableViewDelegate, addMovieDelegate {
+    func movieWasSeen(movieCell: MovieTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: movieCell) else {return}
+       let movie = movieController.movies[indexPath.row]
+        movieController.toggleButton(movie: movie)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        print(movieController.movies.count)
+        return movieController.movies.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let movie = movies[indexPath.row]
-        let film = self.tableView.dequeueReusableCell(withIdentifier: "MovieCell") as?
-             MovieTableViewCell
-        film?.movie = lastPassedMovie
-        
-        return film!
+       
+        guard let film = self.tableView.dequeueReusableCell(withIdentifier: "MovieCell") as?
+            MovieTableViewCell else {return UITableViewCell()}
+        let movie = movieController.movies[indexPath.row]
+        film.movie = movie
+        film.delegate = self
+      return film
         
         
     }
@@ -58,7 +70,9 @@ extension FilmListScreenViewController: UITableViewDataSource, UITableViewDelega
           if segue.identifier == "AddMovieSegue" {
               if let addMovieVC = segue.destination as? AddMovieViewController {
                   // Hey, I'm (the table view controller) going to be the person you tell when a new friend is created
+                
                   addMovieVC.delegate = self
+                addMovieVC.movieController = movieController
               }
       
 }

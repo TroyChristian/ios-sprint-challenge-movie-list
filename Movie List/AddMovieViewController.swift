@@ -8,19 +8,17 @@
 
 import UIKit
 protocol addMovieDelegate{
-    func movieWasCreated(movie:Movie)
+    func movieWasSeen(movieCell:MovieTableViewCell)
 }
 
 class AddMovieViewController: UIViewController {
      var delegate: addMovieDelegate?
+    var movieController:MovieController?
     @IBOutlet weak var newMovieTextField: UITextField!
     @IBAction func AddMovieButtonTapped(_ sender: Any) {
         if let newName = newMovieTextField.text, !newName.isEmpty {
-            let newMovie = Movie(name:newName, seen:false)
-            //let FVC = delegate as? FilmListScreenViewController
-            //FVC?.movieWasCreated(movie:newMovie)
-            
-            delegate?.movieWasCreated(movie:newMovie)
+            movieController?.addMovie(title:newName)
+           
             self.dismiss(animated: true, completion: nil)
             
         }
