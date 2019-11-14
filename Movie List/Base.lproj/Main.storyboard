@@ -73,10 +73,14 @@
                     <navigationItem key="navigationItem" id="bbQ-0T-13x">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5IE-3u-NX3">
                             <connections>
-                                <segue destination="cO3-cd-bKJ" kind="presentation" id="i1m-wx-jFg"/>
+                                <action selector="addButtonTapped:" destination="FrD-rJ-4XV" id="Rwd-2s-vpv"/>
+                                <segue destination="cO3-cd-bKJ" kind="presentation" identifier="addMovieSegue" id="i1m-wx-jFg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="uzR-7L-rYE" id="wac-oj-Dcz"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
